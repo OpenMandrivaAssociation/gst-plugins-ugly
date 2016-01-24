@@ -28,7 +28,7 @@
 
 Summary: GStreamer Streaming-media framework plug-ins
 Name: %{name}
-Version: 1.6.2
+Version: 1.6.3
 Release: 1%{?extrarelsuffix}
 License: LGPLv2+
 Group: Sound
@@ -72,9 +72,9 @@ This package is in restricted repository as it violates some patents.
 %setup -q -n gst-plugins-ugly-%{version}
 
 %build
-%configure2_5x --disable-dependency-tracking --disable-static \
+%configure --disable-dependency-tracking --disable-static \
 --with-package-name='OpenMandriva %{name} package' \
---with-package-origin='http://www.openmandriva.org/' \
+--with-package-origin="%{disturl}" \
 %if ! %{build_lame}
 --disable-lame \
 %endif
