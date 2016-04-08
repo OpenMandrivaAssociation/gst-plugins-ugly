@@ -43,7 +43,7 @@ BuildRequires: pkgconfig(glu)
 BuildRequires: pkgconfig(id3tag)
 BuildRequires: pkgconfig(mad)
 BuildRequires: pkgconfig(dvdread)
-%ifnarch %mips %arm
+%ifnarch %mips %armx
 BuildRequires: pkgconfig(valgrind)
 %endif
 BuildRequires: pkgconfig(check)
