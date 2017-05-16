@@ -101,13 +101,12 @@ find %{buildroot} -name '*.la' -delete
 
 %files -f gst-plugins-ugly-%{majorminor}.lang
 %doc AUTHORS COPYING README NEWS
+%{_libdir}/gstreamer-%{majorminor}/libgstrealmedia.so
 %{_libdir}/gstreamer-%{majorminor}/libgstasf.so
 %{_libdir}/gstreamer-%{majorminor}/libgstdvdlpcmdec.so
 %{_libdir}/gstreamer-%{majorminor}/libgstdvdread.so
 %{_libdir}/gstreamer-%{majorminor}/libgstdvdsub.so
-%{_libdir}/gstreamer-%{majorminor}/libgstmad.so
 %{_libdir}/gstreamer-%{majorminor}/libgstmpg123.so
-%{_libdir}/gstreamer-%{majorminor}/libgstrmdemux.so
 %if %{build_experimental}
 %{_libdir}/gstreamer-%{majorminor}/libgstsynaesthesia.so
 %endif
