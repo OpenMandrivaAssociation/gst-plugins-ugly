@@ -5,6 +5,7 @@
 
 %define build_experimental 0
 %{?_with_experimental: %{expand: %%global build_experimental 1}}
+# (tpg) since 2017 MP3 patents has expired
 %define build_lame 1
 %define build_amrnb 0
 %define build_amrwbdec 0
@@ -26,8 +27,8 @@
 
 Summary: GStreamer Streaming-media framework plug-ins
 Name: %{bname}-plugins-ugly
-Version: 1.10.2
-Release: 2%{?extrarelsuffix}
+Version: 1.12.0
+Release: 1%{?extrarelsuffix}
 License: LGPLv2+
 Group: Sound
 Source0: http://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-%{version}.tar.xz
