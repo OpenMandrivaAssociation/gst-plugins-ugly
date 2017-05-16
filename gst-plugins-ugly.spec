@@ -5,7 +5,8 @@
 
 %define build_experimental 0
 %{?_with_experimental: %{expand: %%global build_experimental 1}}
-%define build_lame 0
+# (tpg) since 2017 MP3 patents has expired
+%define build_lame 1
 %define build_amrnb 0
 %define build_amrwbdec 0
 %define build_x264 0
@@ -19,7 +20,6 @@
 %define distsuffix plf
 # make EVR of plf build higher than regular to allow update, needed with rpm5 mkrel
 %define extrarelsuffix plf
-%define build_lame 1
 %define build_x264 1
 %define build_amrnb 1
 %define build_amrwbdec 1
@@ -27,7 +27,7 @@
 
 Summary: GStreamer Streaming-media framework plug-ins
 Name: %{bname}-plugins-ugly
-Version: 1.10.2
+Version: 1.12.0
 Release: 1%{?extrarelsuffix}
 License: LGPLv2+
 Group: Sound
@@ -101,13 +101,12 @@ find %{buildroot} -name '*.la' -delete
 
 %files -f gst-plugins-ugly-%{majorminor}.lang
 %doc AUTHORS COPYING README NEWS
+%{_libdir}/gstreamer-%{majorminor}/libgstrealmedia.so
 %{_libdir}/gstreamer-%{majorminor}/libgstasf.so
 %{_libdir}/gstreamer-%{majorminor}/libgstdvdlpcmdec.so
 %{_libdir}/gstreamer-%{majorminor}/libgstdvdread.so
 %{_libdir}/gstreamer-%{majorminor}/libgstdvdsub.so
-%{_libdir}/gstreamer-%{majorminor}/libgstmad.so
 %{_libdir}/gstreamer-%{majorminor}/libgstmpg123.so
-%{_libdir}/gstreamer-%{majorminor}/libgstrmdemux.so
 %if %{build_experimental}
 %{_libdir}/gstreamer-%{majorminor}/libgstsynaesthesia.so
 %endif
@@ -125,8 +124,6 @@ BuildRequires: lame-devel >= 3.89
 
 %description -n %{bname}-lame
 Plug-in for encoding mp3 with lame under GStreamer.
-
-This package is in the restricted repository as it violates some patents.
 
 %files -n %{bname}-lame
 %{_libdir}/gstreamer-%{majorminor}/libgstlame.so
