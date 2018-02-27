@@ -6,7 +6,7 @@
 %define build_experimental 0
 %{?_with_experimental: %{expand: %%global build_experimental 1}}
 # (tpg) since 2017 MP3 patents has expired
-%define build_lame 1
+%define build_lame 0
 %define build_amrnb 0
 %define build_amrwbdec 0
 %define build_x264 0
@@ -27,7 +27,7 @@
 
 Summary: GStreamer Streaming-media framework plug-ins
 Name: %{bname}-plugins-ugly
-Version: 1.12.4
+Version: 1.13.1
 Release: 1%{?extrarelsuffix}
 License: LGPLv2+
 Group: Sound
@@ -106,7 +106,7 @@ find %{buildroot} -name '*.la' -delete
 %{_libdir}/gstreamer-%{majorminor}/libgstdvdlpcmdec.so
 %{_libdir}/gstreamer-%{majorminor}/libgstdvdread.so
 %{_libdir}/gstreamer-%{majorminor}/libgstdvdsub.so
-%{_libdir}/gstreamer-%{majorminor}/libgstmpg123.so
+#%{_libdir}/gstreamer-%{majorminor}/libgstmpg123.so
 %if %{build_experimental}
 %{_libdir}/gstreamer-%{majorminor}/libgstsynaesthesia.so
 %endif
@@ -229,14 +229,14 @@ Plug-in for audio CD playback.
 %files -n %{bname}-cdio
 %{_libdir}/gstreamer-%{majorminor}/libgstcdio.so
 
-%package -n %{bname}-twolame
-Summary: GStreamer plug-in for MP2 encoding support
-Group: Sound
-Requires: %{bname}-plugins-base
-BuildRequires: pkgconfig(twolame)
+#%package -n %{bname}-twolame
+#Summary: GStreamer plug-in for MP2 encoding support
+#Group: Sound
+#Requires: %{bname}-plugins-base
+#BuildRequires: pkgconfig(twolame)
 
-%description -n %{bname}-twolame
-Plug-in for encoding MP2 under GStreamer.
+#%description -n %{bname}-twolame
+#Plug-in for encoding MP2 under GStreamer.
 
-%files -n %{bname}-twolame
-%{_libdir}/gstreamer-%{majorminor}/libgsttwolame.so
+#%files -n %{bname}-twolame
+#%{_libdir}/gstreamer-%{majorminor}/libgsttwolame.so
