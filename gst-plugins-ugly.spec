@@ -28,7 +28,7 @@
 Summary: GStreamer Streaming-media framework plug-ins
 Name: %{bname}-plugins-ugly
 Version: 1.14.4
-Release: 1%{?extrarelsuffix}
+Release: 2%{?extrarelsuffix}
 License: LGPLv2+
 Group: Sound
 Source0: http://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-%{version}.tar.xz
@@ -69,7 +69,7 @@ This package is in restricted repository as it violates some patents.
 %endif
 
 %prep
-%setup -q -n gst-plugins-ugly-%{version}
+%autosetup -n gst-plugins-ugly-%{version} -p1
 
 %build
 %configure --disable-dependency-tracking --disable-static \
@@ -82,14 +82,14 @@ This package is in restricted repository as it violates some patents.
 --enable-experimental
 %endif
 
-%make
+%make_build
 
 %check
 cd tests/check
 make check
 
 %install
-GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
+GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %make_install
 
 %find_lang gst-plugins-ugly-%{majorminor}
 
