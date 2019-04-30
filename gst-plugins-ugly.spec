@@ -27,8 +27,8 @@
 
 Summary: GStreamer Streaming-media framework plug-ins
 Name: %{bname}-plugins-ugly
-Version: 1.14.4
-Release: 2%{?extrarelsuffix}
+Version: 1.16.0
+Release: 1%{?extrarelsuffix}
 License: LGPLv2+
 Group: Sound
 Source0: http://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-%{version}.tar.xz
@@ -143,6 +143,8 @@ This package is in restricted repository as it violates some patents.
 %files -n %{bname}-x264
 %{_libdir}/gstreamer-%{majorminor}/libgstx264.so
 %{_datadir}/gstreamer-%{majorminor}/presets/GstX264Enc.prs
+%else
+BuildConflicts: pkgconfig(x264)
 %endif
 
 %if %{build_amrnb}
