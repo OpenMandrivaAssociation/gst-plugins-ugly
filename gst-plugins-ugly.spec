@@ -143,8 +143,6 @@ This package is in restricted repository as it violates some patents.
 %files -n %{bname}-x264
 %{_libdir}/gstreamer-%{majorminor}/libgstx264.so
 %{_datadir}/gstreamer-%{majorminor}/presets/GstX264Enc.prs
-%else
-BuildConflicts: pkgconfig(x264)
 %endif
 
 %if %{build_amrnb}
