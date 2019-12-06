@@ -32,6 +32,7 @@ Group:		Sound
 Source0:	http://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-%{version}.tar.xz
 URL:		http://gstreamer.freedesktop.org/
 BuildRequires:	meson
+BuildRequires:	cmake
 #gw for the pixbuf plugin
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
