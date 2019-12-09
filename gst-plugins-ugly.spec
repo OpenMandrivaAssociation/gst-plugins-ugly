@@ -73,6 +73,15 @@ This package is in restricted repository as it violates some patents.
 
 %build
 %meson \
+%if !%{build_amrnb}
+	-Damrnb=false \
+%endif
+%if !%{build_x264}
+	-Dx264=false \
+%endif
+%if !%{build_amrwbdec}
+	-Damrwbdec=false \
+%endif
 	-Dwith-package-name='OpenMandriva %{name} %{version}-%{release}' \
 	-Dwith-package-origin='%{disturl}'
 
