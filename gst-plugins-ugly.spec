@@ -82,8 +82,8 @@ This package is in restricted repository as it violates some patents.
 %if !%{build_amrwbdec}
 	-Damrwbdec=disabled \
 %endif
-	-Dwith-package-name='OpenMandriva %{name} %{version}-%{release}' \
-	-Dwith-package-origin='%{disturl}'
+	-Dpackage-name='OpenMandriva %{name} %{version}-%{release}' \
+	-Dpackage-origin='%{disturl}'
 
 %meson_build
 
