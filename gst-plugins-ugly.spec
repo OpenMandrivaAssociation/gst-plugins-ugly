@@ -25,8 +25,8 @@
 
 Summary:	GStreamer Streaming-media framework plug-ins
 Name:		%{bname}-plugins-ugly
-Version:	1.16.2
-Release:	3%{?extrarelsuffix}
+Version:	1.18.0
+Release:	1%{?extrarelsuffix}
 License:	LGPLv2+
 Group:		Sound
 Source0:	http://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-%{version}.tar.xz
@@ -82,6 +82,7 @@ This package is in restricted repository as it violates some patents.
 %if !%{build_amrwbdec}
 	-Damrwbdec=disabled \
 %endif
+	-Ddoc=disabled \
 	-Dpackage-name='OpenMandriva %{name} %{version}-%{release}' \
 	-Dpackage-origin='%{disturl}'
 
