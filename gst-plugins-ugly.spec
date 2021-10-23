@@ -84,7 +84,8 @@ This package is in restricted repository as it violates some patents.
 %endif
 	-Ddoc=disabled \
 	-Dpackage-name='OpenMandriva %{name} %{version}-%{release}' \
-	-Dpackage-origin='%{disturl}'
+	-Dpackage-origin='%{disturl}' \
+	--buildtype=release
 
 %meson_build
 
