@@ -83,6 +83,7 @@ This package is in restricted repository as it violates some patents.
 	-Damrwbdec=disabled \
 %endif
 	-Ddoc=disabled \
+	-Dgpl=enabled \
 	-Dpackage-name='OpenMandriva %{name} %{version}-%{release}' \
 	-Dpackage-origin='%{disturl}' \
 	--buildtype=release
