@@ -25,7 +25,7 @@
 
 Summary:	GStreamer Streaming-media framework plug-ins
 Name:		%{bname}-plugins-ugly
-Version:	1.19.3
+Version:	1.20.0
 Release:	1%{?extrarelsuffix}
 License:	LGPLv2+
 Group:		Sound
