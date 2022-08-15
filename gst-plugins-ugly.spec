@@ -105,7 +105,7 @@ rm -fr %{buildroot}%{_datadir}/gtk-doc
 find %{buildroot} -name '*.la' -delete
 
 %files -f gst-plugins-ugly-%{majorminor}.lang
-%doc AUTHORS COPYING README NEWS
+%doc AUTHORS COPYING README* NEWS
 %{_libdir}/gstreamer-%{majorminor}/libgstrealmedia.so
 %{_libdir}/gstreamer-%{majorminor}/libgstasf.so
 %{_libdir}/gstreamer-%{majorminor}/libgstdvdlpcmdec.so
