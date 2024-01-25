@@ -33,6 +33,7 @@ Source0:	http://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-
 URL:		http://gstreamer.freedesktop.org/
 BuildRequires:	meson
 BuildRequires:	cmake
+BuildRequires:	gettext
 #gw for the pixbuf plugin
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
