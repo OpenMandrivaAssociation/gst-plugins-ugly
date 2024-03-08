@@ -5,8 +5,6 @@
 
 %define build_experimental 0
 %{?_with_experimental: %{expand: %%global build_experimental 1}}
-%define build_amrnb 0
-%define build_amrwbdec 0
 %define build_x264 0
 
 ##########################
@@ -19,13 +17,11 @@
 # make EVR of plf build higher than regular to allow update, needed with rpm5 mkrel
 %define extrarelsuffix plf
 %define build_x264 1
-%define build_amrnb 1
-%define build_amrwbdec 1
 %endif
 
 Summary:	GStreamer Streaming-media framework plug-ins
 Name:		%{bname}-plugins-ugly
-Version:	1.22.10
+Version:	1.24.0
 Release:	1
 License:	LGPLv2+
 Group:		Sound
@@ -74,14 +70,8 @@ This package is in restricted repository as it violates some patents.
 
 %build
 %meson \
-%if !%{build_amrnb}
-	-Damrnb=disabled \
-%endif
 %if !%{build_x264}
 	-Dx264=disabled \
-%endif
-%if !%{build_amrwbdec}
-	-Damrwbdec=disabled \
 %endif
 	-Ddoc=disabled \
 	-Dgpl=enabled \
@@ -131,39 +121,6 @@ This package is in restricted repository as it violates some patents.
 %files -n %{bname}-x264
 %{_libdir}/gstreamer-%{majorminor}/libgstx264.so
 %{_datadir}/gstreamer-%{majorminor}/presets/GstX264Enc.prs
-%endif
-
-%if %{build_amrnb}
-%package -n %{bname}-amrnb
-Summary:	GStreamer plug-in for AMR-NB support
-Group:		Sound
-Requires:	%{bname}-plugins-base
-BuildRequires:	pkgconfig(opencore-amrnb)
-
-%description -n %{bname}-amrnb
-Plug-in for decoding AMR-NB under GStreamer.
-
-This package is in restricted repository as it violates some patents.
-
-%files -n %{bname}-amrnb
-%{_libdir}/gstreamer-%{majorminor}/libgstamrnb.so
-%{_datadir}/gstreamer-%{majorminor}/presets/GstAmrnbEnc.prs
-%endif
-
-%if %{build_amrwbdec}
-%package -n %{bname}-amrwbdec
-Summary:	GStreamer plug-in for AMR-WB decoding support
-Group:		Sound
-Requires:	%{bname}-plugins-base
-BuildRequires:	pkgconfig(opencore-amrwb)
-
-%description -n %{bname}-amrwbdec
-Plug-in for decoding AMR-Wb under GStreamer.
-
-This package is in restricted repository as it violates some patents.
-
-%files -n %{bname}-amrwbdec
-%{_libdir}/gstreamer-%{majorminor}/libgstamrwbdec.so
 %endif
 
 ### SIDPLAY ###
