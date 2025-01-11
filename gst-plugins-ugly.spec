@@ -34,7 +34,7 @@ BuildRequires:	gettext
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(orc-0.4)
-BuildRequires:	gstreamer-plugins-base-devel
+BuildRequires:	pkgconfig(gstreamer-plugins-base-1.0)
 BuildRequires:	pkgconfig(glu)
 BuildRequires:	pkgconfig(id3tag)
 BuildRequires:	pkgconfig(mad)
