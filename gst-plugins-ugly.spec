@@ -11,10 +11,11 @@
 # Hardcode PLF build
 %define build_plf 0
 ##########################
+%{?_with_plf: %{expand: %%global build_plf 1}}
 
 %if %{build_plf}
 %define distsuffix plf
-# make EVR of plf build higher than regular to allow update, needed with rpm5 mkrel
+# Restricted EVR must stay above cooker/main (currently 2)
 %define extrarelsuffix plf
 %define build_x264 1
 %endif
@@ -22,7 +23,11 @@
 Summary:	GStreamer Streaming-media framework plug-ins
 Name:		%{bname}-plugins-ugly
 Version:	1.28.6
+%if %{build_plf}
+Release:	101
+%else
 Release:	2
+%endif
 License:	LGPLv2+
 Group:		Sound
 Source0:	https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-%{version}.tar.xz
