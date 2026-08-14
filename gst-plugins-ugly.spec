@@ -26,7 +26,7 @@ Version:	1.28.6
 %if %{build_plf}
 Release:	101
 %else
-Release:	2
+Release:	3
 %endif
 License:	LGPLv2+
 Group:		Sound
